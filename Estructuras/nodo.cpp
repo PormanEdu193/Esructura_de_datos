@@ -1,0 +1,36 @@
+#include "nodo.h"
+
+nodo::nodo()
+{
+	setValor(0);
+	setSiguientePtr(0);
+}
+
+nodo::nodo(int b)
+{
+	setValor(b);
+	setSiguientePtr(0);
+}
+
+nodo::~nodo()
+{
+	;
+}
+
+void nodo::setValor(int v){
+	valor = v;
+}
+
+void nodo::setSiguientePtr(nodo* s){
+	siguientePtr=s;
+}
+int nodo::getValor(){
+	return valor;
+}
+nodo* nodo::getSiguientePtr(){
+	return siguientePtr;
+}
+void nodo::imprimir(){
+	cout<<"El valor del nodo es: "<<getValor()<<endl;
+	cout<<"El nodo le apunta  a: "<<getSiguientePtr()<<endl;
+}
