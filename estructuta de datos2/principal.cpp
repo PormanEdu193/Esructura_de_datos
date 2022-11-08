@@ -1,13 +1,15 @@
-#include "lista.h"
+#include "cola.h"
+
 
 int main(int argc, char** argv) {
-	nodo x;
-	//x.imprimir();
-	lista y;
-	y.leer();
-	//y.eliminarFinal();
-	y.eliminarInicio();
+	lista x;
+	pila y;
+	cola z;
+	x.leer();
+	asignar(x,y,z);
+	x.mostrar();
 	y.mostrar();
+	z.mostrar();
 	return 0;
 }
 
