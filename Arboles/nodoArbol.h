@@ -1,5 +1,6 @@
 #ifndef NODOARBOL_H
 #define NODOARBOL_H
+#include "persona.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -8,20 +9,22 @@ class nodoArbol
 {
 	private:
 		
-		int valor;
-	public:
+		persona persona1;
 		nodoArbol* izPtr;
 		nodoArbol* dePtr;
+	public:
 		nodoArbol();
-		nodoArbol(int);
+		nodoArbol(persona);
 		~nodoArbol();
-		void setValor(int);
+		void setPersona1(persona);
 		void setIzPtr(nodoArbol*);
 		void setDePtr(nodoArbol*);
-		int getValor();
+		persona getPersona1();
 		nodoArbol* getIzPtr();
 		nodoArbol* getDePtr();
 		void imprimir();
+		nodoArbol*& uno();
+		nodoArbol*& dos();
 	protected:
 };
 

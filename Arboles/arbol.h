@@ -1,6 +1,7 @@
 #ifndef ARBOL_H
 #define ARBOL_H
 #include "nodoArbol.h"
+
 class arbol
 {
 	private:
@@ -11,8 +12,11 @@ class arbol
 		nodoArbol* getRaizPtr();
 		void setRaizPtr(nodoArbol*);
 		void imprimir();
-		void insertar(int);
+		void insertar(persona);
 		void ayudaInsertar(int ,nodoArbol* &);
+		void inOrden();
+		void mostrarInOrden(nodoArbol *);
+		nodoArbol*& tres();
 	protected:
 };
 

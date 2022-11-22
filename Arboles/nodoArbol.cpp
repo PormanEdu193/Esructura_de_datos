@@ -3,19 +3,19 @@
 nodoArbol::nodoArbol(){
 	setIzPtr(0);
 	setDePtr(0);
-	setValor(0);
+	//setValor(0);
 }
-nodoArbol::nodoArbol(int v){
+nodoArbol::nodoArbol(persona v){
 	setIzPtr(0);
 	setDePtr(0);
-	setValor(v);
+	setPersona1(v);
 }
 nodoArbol::~nodoArbol(){
 	;
 }
 
-void nodoArbol::setValor(int v){
-	valor=v;
+void nodoArbol::setPersona1(persona v){
+	persona1=v;
 }
 void nodoArbol::setIzPtr(nodoArbol* iz){
 	izPtr=iz;
@@ -23,8 +23,8 @@ void nodoArbol::setIzPtr(nodoArbol* iz){
 void nodoArbol::setDePtr(nodoArbol* de){
 	dePtr=de;
 }
-int nodoArbol::getValor(){
-	return valor;
+persona nodoArbol::getPersona1(){
+	return persona1;
 }
 nodoArbol* nodoArbol::getIzPtr(){
 	return izPtr;
@@ -35,5 +35,12 @@ nodoArbol* nodoArbol::getDePtr(){
 void nodoArbol::imprimir(){
 	cout<<"Nodo izquierdo = "<<getIzPtr()<<endl;
 	cout<<"Nodo derecho = "<<getDePtr()<<endl;
-	cout<<"Valor = "<<getValor()<<endl;
+	//cout<<"Persona = "<<getPersona1()<<endl;
+}
+
+nodoArbol*& nodoArbol::uno(){
+	return izPtr;
+}
+nodoArbol*& nodoArbol::dos(){
+	return dePtr;
 }
