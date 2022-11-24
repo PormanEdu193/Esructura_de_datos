@@ -13,10 +13,11 @@ class arbol
 		void setRaizPtr(nodoArbol*);
 		void imprimir();
 		void insertar(persona);
-		void ayudaInsertar(int ,nodoArbol* &);
+		void ayudaInsertar(persona ,nodoArbol* &);
 		void inOrden();
 		void mostrarInOrden(nodoArbol *);
 		nodoArbol*& tres();
+		void leer();
 	protected:
 };
 

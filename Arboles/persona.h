@@ -2,6 +2,13 @@
 #define PERSONA_H
 #include<string>
 using std::string;
+#include <iostream>
+using std::cout;
+using std::endl;
+#include <fstream>
+using std::ifstream;
+using std::ofstream;
+using std::ios;
 
 
 class persona 
@@ -18,8 +25,9 @@ class persona
 		void setSexo(char);
 		string getNombre();
 		char getSexo();
-		int getEdad;
+		int getEdad();
 		void imprimir();
+		
 	protected:
 };
 

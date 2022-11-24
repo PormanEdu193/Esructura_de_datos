@@ -28,24 +28,24 @@ void arbol::insertar(persona i){
 	ayudaInsertar(i,tres());
 }
 
-void arbol::ayudaInsertar(persona a,nodoArbol * & raizLocal){
+void arbol::ayudaInsertar(persona a,nodoArbol*& raizLocal){
 	if(raizLocal==0){
 		nodoArbol* temp= new nodoArbol(a);
 		raizLocal = temp;
 		cout<<"Dato insertado "<<a.getNombre()<<endl;
 	}
 	else{
-		if(a.getNombre()<raizLocal->getPersona().getNombre(){
-			cout<<"Dato insertado por la izquierda "<<a<<endl;
+		if(a.getNombre()<raizLocal->getValor().getNombre()){
+			cout<<"Dato insertado por la izquierda "<<a.getNombre()<<endl;
 			ayudaInsertar(a,raizLocal->uno());	
 		}
 		else{
-			if(a>raizLocal->getPersona().getNombre()){
-				cout<<"Dato insertado por la derecha "<<a<<endl;
+			if(a.getNombre()>raizLocal->getValor().getNombre()){
+				cout<<"Dato insertado por la derecha "<<a.getNombre()<<endl;
 				ayudaInsertar(a,raizLocal->dos());
 			}
 			else{
-			 	cout<<"Dato duplicado "<<a<<endl;
+			 	cout<<"Dato duplicado "<<a.getNombre()<<endl;
 			}		
 		}
 	}
@@ -58,7 +58,27 @@ void arbol::inOrden(){
 void arbol::mostrarInOrden(nodoArbol* raizLocal){
 	if(raizLocal!=0){
 		mostrarInOrden(raizLocal->getIzPtr());
-		cout<<raizLocal->getValor()<<endl;
+		cout<<raizLocal->getValor().getNombre()<<endl;
 		mostrarInOrden(raizLocal->getDePtr());
 	}
+}
+
+void arbol::leer(){
+	ifstream archivo;
+	string n;
+	persona p;
+	archivo.open("datosPersonas.txt",ios::in);
+	if(archivo.fail()){
+		cout<<"No se puede abrir el archivo";
+		exit(1);
+	}
+	else{
+		while(!archivo.eof()){
+		    archivo>>n;
+			p.setNombre(n);
+		    insertar(p);
+		}
+	}
+	
+	cout<<"Datos ingresados"<<endl;
 }
